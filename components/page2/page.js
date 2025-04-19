@@ -59,7 +59,7 @@ export default function Page2({data, id}) {
         };
     return(
         <section className=''>
-            <div style={{backgroundImage : `url('assets/home.jpeg')`}} className={`${style.bg} w-full h-screen  `}>
+            <div style={{backgroundImage : `url('/assets/home.jpeg')`}} className={`${style.bg} w-full h-screen  `}>
                 <div className={`${style.wrap} relative z-10 h-screen  w-full flex justify-center items-center`}>
                     <AnimateSee>
                         <div className=''>

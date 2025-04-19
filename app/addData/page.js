@@ -145,16 +145,16 @@ export default function AddData() {
       // Panggil fungsi uploadFiles dengan state files dan kategori
 
       const uploadedFiles = await uploadFiles(id, files, [
-      'hero',
-      'home',
+      // 'hero',
+      // 'home',
       'groom',
       'bride',
-      'location',
-      'expresion',
+      // 'location',
+      // 'expresion',
       'galery',
-      'rsvp',
-      'story',
-      'galery'
+      // 'rsvp',
+      // 'story',
+      // 'galery'
       ]);
       setMessage(false)
       // Log hasil upload
@@ -282,16 +282,16 @@ const login = async (email, password) => {
 
 
 
-                  {/* <label className="text-white text-xl italic">Backround Weddings</label>
-                  <p className="text-white py-2">background Hero</p>
+                  <label className="text-white text-xl italic">Backround Weddings</label>
+                  {/* <p className="text-white py-2">background Hero</p>
                   <input type="file" className="text-white" onChange={handleFileChange} required name="hero" />
                   <p className="text-white py-2">background Home</p>
-                  <input type="file" className="text-white" onChange={handleFileChange} required name="home"/>
+                  <input type="file" className="text-white" onChange={handleFileChange} required name="home"/> */}
                   <p className="text-white py-2">profile mens</p>
                   <input type="file" className="text-white" onChange={handleFileChange} required name="groom"/>
                   <p className="text-white py-2">profile grils</p>
                   <input type="file" className="text-white"  onChange={handleFileChange} required name="bride"/>
-                  <p className="text-white py-2">background Location</p>
+                  {/* <p className="text-white py-2">background Location</p>
                   <input type="file" className="text-white" onChange={handleFileChange} required name="location"/>
                   <p className="text-white py-2">background Love Story</p>
                   <input type="file" className="text-white" onChange={handleFileChange} required name="story" />
