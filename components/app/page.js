@@ -36,14 +36,18 @@ console.log(isHidden);
         // if(window.scrollTo(0,0)){
             // } 
             // const handleResize = () => {
+                const raf =requestAnimationFrame(() => {
+                    document.body.style.overflow = 'hidden'
+                    setIsHidden(true)
+                })
                 const vh = window.innerHeight * 0.01;
                 document.documentElement.style.setProperty('--vh', `${vh}px`)
-            // }
+                // }
             // handleResize()
-            setIsHidden(true)
             
             
         return() => {
+            cancelAnimationFrame(raf);
             document.body.style.overflow = '';
         }
     },[])
@@ -54,13 +58,13 @@ console.log(isHidden);
             setData(data)
         }
         getData()
-        if(isHidden){
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'auto'
-        }
+        // if(isHidden){
+        //     document.body.style.overflow = 'hidden'
+        // } else {
+        //     document.body.style.overflow = 'auto'
+        // }
 
-    },[isHidden])
+    },[])
     // console.log(data);
     const toggleMusic = () => {
         const audio = document.getElementById('music');
