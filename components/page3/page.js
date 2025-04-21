@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { fetchBg } from '../data/firebase'
 import { AnimatedSection, AnimateSee } from '../animation'
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
+import { FaTwitter } from "react-icons/fa";
 import Link from 'next/link'
 
 
@@ -46,11 +46,11 @@ export default function Page3({data, id}) {
             <AnimateSee>
             <div className=' text-center  p-5'>
                 <h3 className='text-2xl sm:text-4xl playfair italic font-bold' style={{textShadow: '1px 1px #fabe3c'}}>{data?.name?.namaLengkap?.mens}</h3>
-                <p className='italic'  dangerouslySetInnerHTML={{ __html: data?.parent?.mens }}></p>
+                <p className='italic w-32 mx-auto'  dangerouslySetInnerHTML={{ __html: data?.parent?.mens }}></p>
                 <div className='flex justify-center items-center pt-4'>
                     <Link href={`${data?.sosmed?.mens?.facebook}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaFacebookF /></Link>
                     <Link href={`${data?.sosmed?.mens?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaInstagram /></Link>
-                    <Link href={`${data?.sosmed?.mens?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><CiTwitter /></Link>
+                    <Link href={`${data?.sosmed?.mens?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTwitter /></Link>
                     <Link href={`${data?.sosmed?.mens?.tiktok}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTiktok /></Link>
                 </div>
             </div>
@@ -67,11 +67,11 @@ export default function Page3({data, id}) {
             <AnimateSee>
             <div className='  text-center p-5'>
                 <h3 className='text-2xl sm:text-4xl playfair italic font-bold'  style={{textShadow: '1px 1px #fabe3c'}}>{data?.name?.namaLengkap?.grils}</h3>
-                <p className='italic'  dangerouslySetInnerHTML={{ __html: data?.parent?.grils }} />
+                <p className='italic w-32 mx-auto'  dangerouslySetInnerHTML={{ __html: data?.parent?.grils }} />
                 <div className='flex justify-center items-center pt-4'>
                     <Link href={`${data?.sosmed?.grils?.facebook}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaFacebookF /></Link>
                     <Link href={`${data?.sosmed?.grils?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaInstagram /></Link>
-                    <Link href={`${data?.sosmed?.grils?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><CiTwitter /></Link>
+                    <Link href={`${data?.sosmed?.grils?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTwitter /></Link>
                     <Link href={`${data?.sosmed?.grils?.tiktok}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTiktok /></Link>
                 </div>
             </div>
@@ -80,6 +80,6 @@ export default function Page3({data, id}) {
     )
 }
 Page3.propTypes = {
-    data: PropTypes.string,
+    data: PropTypes.object,
     id: PropTypes.string
 }

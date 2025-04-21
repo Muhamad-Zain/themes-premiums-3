@@ -29,25 +29,25 @@ export default function Page2({data, id}) {
             // Render a countdown
             return (
                 <div style={{ fontSize: '2rem', textAlign: 'center' }} className=" GVibes  flex w-screen px-10 sm:w-full sm:px-0  m-auto font-serif text-orange-950 p-2 justify-between">
-                <div className="rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-70 w-[4rem] h-[4rem]  flex justify-center items-center">
+                <div className="rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
                   <div className="leading-6 text-4xl sm:text-5xl  font-bold">
                     {days}
                     <p className="text-xs sm:text-sm  ">Days</p>
                   </div>
                 </div>
-                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-70 w-[4rem] h-[4rem]  flex justify-center items-center">
+                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
                   <div className="leading-6 text-4xl sm:text-5xl  font-bold">
                     {hours}
                     <p className="text-xs sm:text-sm  ">Hours</p>
                   </div>
                 </div>
-                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-70 w-[4rem] h-[4rem]  flex justify-center items-center">
+                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
                   <div className="leading-6 text-4xl sm:text-5xl  font-bold">
                     {minutes}
                     <p className="text-xs sm:text-sm  ">Minutes</p>
                   </div>
                 </div>
-                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-70 w-[4rem] h-[4rem]  flex justify-center items-center">
+                <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
                   <div className="leading-6 text-4xl sm:text-5xl  font-bold">
                     {seconds}
                     <p className="text-xs sm:text-sm  ">Seconds</p>

@@ -6,7 +6,7 @@ import { HiHomeModern } from "react-icons/hi2";
 import { FaPeoplePulling } from "react-icons/fa6";
 import { MdOutlineShareLocation } from "react-icons/md";
 import { PiGooglePhotosLogoFill } from "react-icons/pi";
-import PropTypes from "prop-types";
+import PropTypes, { bool } from "prop-types";
 import { fetchData } from "../data/firebase";
 import Page1 from "../page1/page";
 import Page2 from "../page2/page";
@@ -21,14 +21,47 @@ import Page9 from "../page9/page";
 
 
 export default function App({id, name}) {
-    const [isHidden, setIsHidden] = useState(true)
+    const [isHidden, setIsHidden] = useState(null)
     const [bgToggle, setBgTogle] = useState('bg-black')
     const [data, setData] = useState([])
     const [open, setOpen] = useState(false)
 
     
+console.log(isHidden);
 
 
+  
+    useEffect(() => {
+        window.scrollTo(0,0)
+        // if(window.scrollTo(0,0)){
+            // } 
+            // const handleResize = () => {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`)
+            // }
+            // handleResize()
+            setIsHidden(true)
+            
+            
+        return() => {
+            document.body.style.overflow = '';
+        }
+    },[])
+    
+    useEffect(() => {
+        const getData = async () => {
+            const data = await fetchData(id)
+            setData(data)
+        }
+        getData()
+        if(isHidden){
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+
+    },[isHidden])
+    // console.log(data);
     const toggleMusic = () => {
         const audio = document.getElementById('music');
         if (audio.paused) {
@@ -61,34 +94,6 @@ export default function App({id, name}) {
           }, 100); 
     }
     const navbar = () => setOpen(!open)
-    useEffect(() => {
-        window.scrollTo(0,0)
-
-        const handleResize = () => {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`)
-        }
-        handleResize()
-            if(isHidden){
-                document.body.style.overflow = 'hidden'
-            } else {
-                document.body.style.overflow = 'auto'
-            }
-            
-        return() => {
-            document.body.style.overflow = '';
-        }
-    },[isHidden])
-
-    useEffect(() => {
-        const getData = async () => {
-            const data = await fetchData(id)
-            setData(data)
-        }
-        getData()
-
-    },[])
-    console.log(data);
     
     return( data ?
         (<section className="sm:px-20 relative">

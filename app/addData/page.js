@@ -21,7 +21,7 @@ export default function AddData() {
         parent:{mens:'',grils:''},
         location: {akad:'',resepsi:''},
         gift: {one:{nameBank:'',rekening:'',an:''},two:{nameBank:'',rekening:'',an:''},home:''},
-        story: {one:'',two:'',tree:''},
+        // story: {one:'',two:'',tree:''},
         sosmed: {mens:{facebook:'',instagram:'', twitter:'', tiktok:''},grils:{facebook:'',instagram:'', twitter:'', tiktok:''}},
         expresion:'',
         rsvp: ''
@@ -35,7 +35,7 @@ export default function AddData() {
       expresion: null,
       galery: null,
       rsvp: null,
-      story: null,
+      // story: null,
       sosmed:null,
       galery: []
     })
@@ -260,14 +260,14 @@ const login = async (email, password) => {
                   <p className="text-white">Alamat Rumah (kado)</p>
                   <input type="text" name="gift.home" className="w-full outline-none my-1 rounded-md px-2 py-2"  placeholder="ex. jl.Sudirman no.14 Jakarta Utara" onChange={handleChange} required/>
 
-                  <label className="text-white text-xl italic">Story</label>
+                  {/* <label className="text-white text-xl italic">Story</label>
                   <p className="text-white">Paragraf 1</p>
                   <input type="text" name="story.one" className="w-full outline-none my-1 rounded-md px-2 py-2"  placeholder="ex. " onChange={handleChange} />
                   <p className="text-white">Paragraf 2</p>
                   <input type="text" name="story.two" className="w-full outline-none my-1 rounded-md px-2 py-2"  placeholder="ex. " onChange={handleChange} />
                   <p className="text-white">Paragraf 3</p>
                   <input type="text" name="story.tree" className="w-full outline-none my-1 rounded-md px-2 py-2"  placeholder="ex. " onChange={handleChange} />
-                  
+                   */}
                   <label className="text-white text-xl italic">link sosmed</label>
                   <p className="text-white ">Mens</p>
                   <input type="text" name="sosmed.mens.facebook" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Facebook" onChange={handleChange} />
