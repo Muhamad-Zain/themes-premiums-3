@@ -61,21 +61,25 @@ export default function Page2({data, id}) {
         <section className=''>
             <div style={{backgroundImage : `url('/assets/home.jpeg')`}} className={`${style.bg} w-full h-screen  `}>
                 <div className={`${style.wrap} relative z-10 h-screen  w-full flex justify-center items-center`}>
-                    <AnimateSee>
+                    {/* <AnimateSee> */}
                         <div className=''>
                             <div style={{textShadow: '1px 1px #065f46 '}} className='text-center  relative z-10  '>
+                              <AnimateSee>
                                 <p className='font-bold tracking-[0.3rem] mb-5'>THE WEDDING OF</p>
                                 <h3 className="text-5xl sm:text-7xl GVibes font-bold py-2 text-center  flex  justify-center ">
                                 <span className="text-center sm:text-left italic">{data?.name?.mens}</span>
                                 <span className="px-5" >&</span>
                                 <span className="">{data?.name?.grils}</span>
                                 </h3>
+                              </AnimateSee>
                                 {/* <h3 className='text-3xl playfair font-bold sm:text-4xl py-2'>{data?.name?.mens} & {data?.name?.grils}</h3> */}
                                 {/* <p>{data?.date?.resepsi}</p> */}
                             </div>
+                            <AnimateSee>
                             <Countdown date={time} renderer={render}/>
+                            </AnimateSee>
                     </div>
-                    </AnimateSee>
+                    {/* </AnimateSee> */}
                     
                 </div>
             </div>

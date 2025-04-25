@@ -3,7 +3,8 @@ import style from './style.module.css'
 import { useEffect, useState } from 'react'
 import { fetchBg } from '../data/firebase'
 import { AnimatedSection, AnimateSee } from '../animation'
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaFacebookF, FaTiktok } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter } from "react-icons/fa";
 import Link from 'next/link'
 
@@ -23,6 +24,8 @@ export default function Page3({data, id}) {
         }
         getImage()
     },[])
+    console.log(data?.sosmed?.mens?.facebook);
+    
     return(
         <section className='py-10 px-2 sm:px-20'>
             <div className='text-4xl sm:text-5xl text-center font-bold pb-10'>
@@ -35,13 +38,14 @@ export default function Page3({data, id}) {
                 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan kami:</p>
             </div>
             <AnimatedSection>
+                <AnimateSee>
             <h3 className='text-center text-3xl pb-10 GVibes'>The Groom</h3>
+            </AnimateSee>
+            <AnimateSee>
             <div className=' flex  items-center justify-center'>
                 <div style={{backgroundImage:`url(${groom})`}} className={style.bgCardMen} />
-                {/* <div className={style.chil}>
-                    <h3>THE GROOM</h3>
-                </div> */}
             </div>
+            </AnimateSee>
             </AnimatedSection>
             <AnimateSee>
             <div className=' text-center  p-5'>
@@ -49,7 +53,7 @@ export default function Page3({data, id}) {
                 <p className='italic w-32 mx-auto'  dangerouslySetInnerHTML={{ __html: data?.parent?.mens }}></p>
                 <div className='flex justify-center items-center pt-4'>
                     <Link href={`${data?.sosmed?.mens?.facebook}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaFacebookF /></Link>
-                    <Link href={`${data?.sosmed?.mens?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaInstagram /></Link>
+                    <Link href={`${data?.sosmed?.mens?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><AiFillInstagram /></Link>
                     <Link href={`${data?.sosmed?.mens?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTwitter /></Link>
                     <Link href={`${data?.sosmed?.mens?.tiktok}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTiktok /></Link>
                 </div>
@@ -59,10 +63,14 @@ export default function Page3({data, id}) {
                 <div className='border-b-2 border-[#8b5e3c] w-20' /><span className='px-5 '>&</span><div className='border-b-2 border-[#8b5e3c] w-20 ' />
             </div>
             <AnimatedSection>
+            <AnimateSee>
             <h3 className='text-center text-3xl pb-10 GVibes'>The Bride</h3>
+            </AnimateSee>
+            <AnimateSee>
             <div className=' flex  items-center justify-center'>
                 <div style={{backgroundImage:`url(${bride})`}} className={style.bgCardGrils} />
             </div>
+            </AnimateSee>
             </AnimatedSection>
             <AnimateSee>
             <div className='  text-center p-5'>
@@ -70,7 +78,7 @@ export default function Page3({data, id}) {
                 <p className='italic w-32 mx-auto'  dangerouslySetInnerHTML={{ __html: data?.parent?.grils }} />
                 <div className='flex justify-center items-center pt-4'>
                     <Link href={`${data?.sosmed?.grils?.facebook}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaFacebookF /></Link>
-                    <Link href={`${data?.sosmed?.grils?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaInstagram /></Link>
+                    <Link href={`${data?.sosmed?.grils?.instagram}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><AiFillInstagram /></Link>
                     <Link href={`${data?.sosmed?.grils?.twitter}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTwitter /></Link>
                     <Link href={`${data?.sosmed?.grils?.tiktok}`} className='p-2 bg-orange-800 m-1 text-yellow-500 rounded-lg'><FaTiktok /></Link>
                 </div>
@@ -80,6 +88,6 @@ export default function Page3({data, id}) {
     )
 }
 Page3.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.string,
     id: PropTypes.string
 }

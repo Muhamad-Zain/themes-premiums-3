@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Countdown from "react-countdown";
-import { AnimatedSection } from "../animation";
+import { AnimatedSection, AnimateSee } from "../animation";
 import style from './style.module.css'
 
 
@@ -90,7 +90,9 @@ export default function Page5({data}) {
                     kami nantikan kehadiran para keluarga dan sahabat, untuk menjadi saksi ikrar janji suci kami di hari yang bahagia:
                     </p>
                   </div>
+                  <AnimateSee>
                   <Countdown date={time} renderer={renderer} />
+                  </AnimateSee>
               </div>
 
             </div>

@@ -271,12 +271,12 @@ const login = async (email, password) => {
                   <label className="text-white text-xl italic">link sosmed</label>
                   <p className="text-white ">Mens</p>
                   <input type="text" name="sosmed.mens.facebook" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Facebook" onChange={handleChange} />
-                  <input type="text" name="sosmed.mens.insstagram" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Instagram" onChange={handleChange} />
+                  <input type="text" name="sosmed.mens.instagram" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Instagram" onChange={handleChange} />
                   <input type="text" name="sosmed.mens.twitter" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Twitter" onChange={handleChange} />
                   <input type="text" name="sosmed.mens.tiktok" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Tiktok" onChange={handleChange} />
                   <p className="text-white ">Grils</p>
                   <input type="text" name="sosmed.grils.facebook" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Facebook" onChange={handleChange} />
-                  <input type="text" name="sosmed.grils.insstagram" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Instagram" onChange={handleChange} />
+                  <input type="text" name="sosmed.grils.instagram" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Instagram" onChange={handleChange} />
                   <input type="text" name="sosmed.grils.twitter" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Twitter" onChange={handleChange} />
                   <input type="text" name="sosmed.grils.tiktok" className="w-full outline-none my-1 rounded-md px-2 py-2" placeholder="Link Tiktok" onChange={handleChange} />
 

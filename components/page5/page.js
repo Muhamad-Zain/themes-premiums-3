@@ -28,7 +28,7 @@ export default function Page4({data, id}) {
             <AnimatedSection>
                 <div style={{backgroundImage:'url(/assets/bg-information.jpeg'}} className={style.bg}>
                  <AnimateSee>
-                    <h3 className='text-center z-10 relative text-xl playfair font-semibold '>Akad Nikah</h3>
+                    <h3 className='text-center z-10 relative text-xl playfair font-semibold border-b-2 border-orange-800 w-40 mx-auto'>Akad Nikah</h3>
                     <div className='relative z-10 text-center py-10 text-lg '>
                         <p>{data?.date?.akad}</p>
                         <p>{data?.date?.time?.akad} - Selesai</p>
@@ -45,7 +45,7 @@ export default function Page4({data, id}) {
                 </div>
                 <div style={{backgroundImage:'url(/assets/bg-information.jpeg'}} className={style.bg}>
                  <AnimateSee>
-                    <h3 className='text-center z-10 relative text-xl playfair font-semibold '>Resepsi</h3>
+                    <h3 className='text-center z-10 relative text-xl playfair font-semibold border-b-2 border-orange-800  w-40 mx-auto'>Resepsi</h3>
                     <div className='relative z-10 text-center py-10 text-lg '>
                         <p>{data?.date?.resepsi}</p>
                         <p>{data?.date?.time?.resepsi} - Selesai</p>
