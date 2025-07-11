@@ -115,10 +115,6 @@ export default function AddData() {
     
   };
 
- 
-
-
-  
 const login = async (email, password) => {
       const fetch = await loginUser(email, password)
       if (fetch === true) {
@@ -141,7 +137,6 @@ const login = async (email, password) => {
               <div>
               <h3 className="text-center text-xl w-3/4 m-auto py-5 playfair">Add Data to template wedings exlusive</h3>
               <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" value={idUndangan} onChange={(e) => setIdUndangan(e.target.value)} />
-
               <form 
                   onSubmit={handleSubmit}
                   className="p-2 text-black">
