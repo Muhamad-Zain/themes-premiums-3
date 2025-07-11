@@ -52,7 +52,7 @@ const fetchData = async (id) => {
 // fetch Background Image 
 const fetchBg = async (id) => {
     try {
-        const galleryRef = storageRef(storage, `${id}`); // Referensi ke folder '01/galery'
+        const galleryRef = storageRef(storage, `weddings-tree/${id}`); // Referensi ke folder '01/galery'
         
         const images = [];
         const listResult = await listAll(galleryRef); // Mendapatkan semua item dalam folder

@@ -24,7 +24,6 @@ export default function Page3({data, id}) {
         }
         getImage()
     },[])
-    console.log(data?.sosmed?.mens?.facebook);
     
     return(
         <section className='py-10 px-2 sm:px-20'>

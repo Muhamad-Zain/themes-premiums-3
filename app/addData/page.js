@@ -1,6 +1,6 @@
 'use client'
 import { addDataToFirebase, uploadFiles, auth, loginUser } from "@/components/data/firebase"
-// import { signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { useState } from "react"
 
 
@@ -8,11 +8,14 @@ import { useState } from "react"
 export default function AddData() {
     const [newId, setNewId] = useState('')  
     const [message, setMessage] = useState(false)
-    // const [auth, setAuth ] = useState(false) 
-    // const [name, setName] = useState('')
-    // const [password, setPassword] = useState('')
-    
-    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [verify, setVerify] = useState(false)
+    const [err, setErr] = useState('')
+    const [idUndangan, setIdUndangan] = useState('P3-')
+    const auth = getAuth();
+
+
 
     const [data, setData] = useState({
         // id: Date now(),
@@ -40,9 +43,19 @@ export default function AddData() {
       galery: []
     })
 
+     onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log('User dengan ID:', user.uid);
+        setVerify(true);
+    
+      } else {
+        console.log('User belum login');
+        setVerify(false);
+        localStorage.removeItem('loginTime');
+      }
+    });
 
-
-  const updateNestedState = (path, value) => {
+    const updateNestedState = (path, value) => {
     setData(prevData => {
       const keys = path.split(".");
       const lastKey = keys.pop();
@@ -51,8 +64,6 @@ export default function AddData() {
       return { ...prevData };
     });
   };
-
- 
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -75,65 +86,9 @@ export default function AddData() {
         [name]: selectedFiles[0]
       }));
     }
-    // const { name, files: selectedFiles} = e.target
-    // if(name === "galery"){
-    //   const newFiles = Array.from(selectedFiles).map((file) => ({
-    //     file,
-    //     status: "pending",
-    //   }))
-    //   setFiles((prevFiles) => ({
-    //     ...prevFiles,
-    //     galery: [...(prevFiles.galery || []), ...newFiles],
-    //   }))
-    // } else {
-    //   setFiles((prevFiles) => ({
-    //     ...prevFiles,
-    //     [name]: [{file: selectedFiles[0], status: "pending"}]
-    //   }))
-    // }
   };
 
-//   const uploadFiles = async (id, files, categories) => {
-//     let allUploads = [];
 
-//     for (const category of categories){
-//       if(!files[category]) continue;
-//     const uploadPromises = files[category].map(async (fileObj) => {
-//       if (fileObj.status === "success") return fileObj;
-      
-//       try {
-//         const fileRef = storageRef.child(`uploads/${id}/${category}/${fileObj.file.name}`)
-//         await fileRef.put(fileObj.file)
-//         const url = await fileRef.getDownloadURL()
-
-//         return {...fileObj, status: "succes", url}
-//       } catch (error) {
-//         console.log(`Upload gagal ${fileObj.file.name} dikategory ${category}:`, error);
-        
-//         return { ...fileObj,status: "failed"}
-        
-//       }
-//     })
-//     const uploadedCategoryFiles = await Promise.all(uploadPromises)
-//     allUploads = [...allUploads, ...uploadedCategoryFiles]
-    
-//     setFiles((prevFiles) => ({
-//       ...prevFiles,
-//       [category]: uploadedCategoryFiles
-//     }))
-//   }
-//   setTimeout(() => {
-//     const failedFiles = allUploads.filter((file) => file.status === "failed")
-//     if(failedFiles.lenght >0){
-//       console.log("mengulangi upload file yang gagal");
-//       uploadFiles(id, files, categories)
-      
-//     }
-//   }, 2000);
-//   return allUploads
-// }
-
-  const [idUndangan, setIdUndangan] = useState('')
   const handleSubmit = async(e) => {
     e.preventDefault();
     const id =  idUndangan;
@@ -141,20 +96,10 @@ export default function AddData() {
     try {
       setMessage(true)
       await addDataToFirebase(id,data);
-      // console.log("Submitted data:", data);
-      // Panggil fungsi uploadFiles dengan state files dan kategori
-
-      const uploadedFiles = await uploadFiles(id, files, [
-      // 'hero',
-      // 'home',
+      const uploadedFiles = await uploadFiles(`weddings-tree/${id}`, files, [
       'groom',
       'bride',
-      // 'location',
-      // 'expresion',
       'galery',
-      // 'rsvp',
-      // 'story',
-      // 'galery'
       ]);
       setMessage(false)
       // Log hasil upload
@@ -165,29 +110,14 @@ export default function AddData() {
       setMessage(false)
     }
 
-    setNewId(`premium-1.vercel.app/${id}`)
+    setNewId(`premium-3.vercel.app/${id}`)
     alert('Berhasil kirim data ke firebase')
     
   };
 
  
 
-  // console.log(name, password);
-  
-  // const handleAuth = () => {
-  //   // e.preventDefault
-  //   if (name === 'owner' && password === '123') {
-  //     setAuth(true)
-  //   } else {
-  //     alert('Autenticarion gagal')
-  //   }
 
-  // }
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [verify, setVerify] = useState(false)
-  // console.log(email, password);
-  const [err, setErr] = useState('')
   
 const login = async (email, password) => {
       const fetch = await loginUser(email, password)
@@ -206,11 +136,11 @@ const login = async (email, password) => {
 
 
     return(
-        <section className="max-w-[400px] bg-yellow-600 mb-20 m-auto">
+        <section className="max-w-[400px] bg-yellow-600 pb-10 m-auto">
             {verify ? (
               <div>
               <h3 className="text-center text-xl w-3/4 m-auto py-5 playfair">Add Data to template wedings exlusive</h3>
-              <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" onChange={(e) => setIdUndangan(e.target.value)} />
+              <input type="text" placeholder="Id Undangan" className="text-black outline-none p-2 ml-2 rounded-md" value={idUndangan} onChange={(e) => setIdUndangan(e.target.value)} />
 
               <form 
                   onSubmit={handleSubmit}
