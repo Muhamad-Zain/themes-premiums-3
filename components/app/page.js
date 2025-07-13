@@ -32,23 +32,25 @@ console.log(isHidden);
 
   
     useEffect(() => {
-        window.scrollTo(0,0)
-        // if(window.scrollTo(0,0)){
-            // } 
-            // const handleResize = () => {
-                const raf =requestAnimationFrame(() => {
-                    document.body.style.overflow = 'hidden'
-                    setIsHidden(true)
-                })
-                const vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`)
-                // }
-            // handleResize()
-            
-            
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto'})
+        }
+        window.addEventListener('load', scrollToTop)
+
+        window.addEventListener('beforeunload', scrollToTop)
+                // const raf =requestAnimationFrame(() => {
+                //     document.body.style.overflow = 'hidden'
+                //     setIsHidden(true)
+                // })
+        document.body.style.overflow = 'hidden'
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+
         return() => {
-            cancelAnimationFrame(raf);
+            // cancelAnimationFrame(raf);
             document.body.style.overflow = '';
+            window.addEventListener('load', scrollToTop)
+            window.addEventListener('beforeunload', scrollToTop)
         }
     },[])
     
@@ -58,14 +60,9 @@ console.log(isHidden);
             setData(data)
         }
         getData()
-        // if(isHidden){
-        //     document.body.style.overflow = 'hidden'
-        // } else {
-        //     document.body.style.overflow = 'auto'
-        // }
 
     },[])
-    // console.log(data);
+
     const toggleMusic = () => {
         const audio = document.getElementById('music');
         if (audio.paused) {
