@@ -18,49 +18,118 @@ export default function Page5({data}) {
         setIsClient(true); // Set state untuk render hanya di klien
     }, []);
 
+    // const renderer = ({days, hours, minutes, seconds, completed }) => {
+    //   if (completed) {
+    //         // return setSave(false)
+    //       // Render a completed state
+    //       return (<span className="text-xl">Hari Penikahan Telah Tiba!!</span>);
+    //     } else {
+    //       // Render a countdown
+    //       return (
+    //           <><div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%] sm:w-[70%] py-5 m-auto GVibes text-orange-900 pt-20 justify-between">
+    //           <div className="rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
+    //             <div className="leading-6 text-3xl font-bold">
+    //               {days}
+    //               <p className="text-xs">Days</p>
+    //             </div>
+    //           </div>
+    //           <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
+    //             <div className="leading-6 text-3xl font-bold">
+    //               {hours}
+    //               <p className="text-xs">Hours</p>
+    //             </div>
+    //           </div>
+    //           <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
+    //             <div className="leading-6 text-3xl font-bold">
+    //               {minutes}
+    //               <p className="text-xs">Minutes</p>
+    //             </div>
+    //           </div>
+    //           <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
+    //             <div className="leading-6 text-3xl font-bold">
+    //               {seconds}
+    //               <p className="text-xs">Seconds</p>
+    //             </div>
+    //           </div>
+    //         </div>
+    //         <div className="w-full flex justify-center items-center">
+    //           <button
+    //             onClick={handleSaveDate}
+    //             className="py-2  px-4 text-3xl rounded-md bg-yellow-600 bg-opacity-80 text-orange-800 playfair">SAVE DATE</button>
+    //         </div>
+    //         </>
+    //       );
+    //     }
+    //   };
     const renderer = ({days, hours, minutes, seconds, completed }) => {
-      if (completed) {
-            // return setSave(false)
-          // Render a completed state
-          return (<span className="text-xl">Hari Penikahan Telah Tiba!!</span>);
-        } else {
-          // Render a countdown
-          return (
-              <><div style={{ fontSize: '2rem', textAlign: 'center' }} className="flex w-[90%] sm:w-[70%] py-5 m-auto GVibes text-orange-900 pt-20 justify-between">
-              <div className="rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
-                <div className="leading-6 text-3xl font-bold">
-                  {days}
-                  <p className="text-xs">Days</p>
-                </div>
-              </div>
-              <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
-                <div className="leading-6 text-3xl font-bold">
-                  {hours}
-                  <p className="text-xs">Hours</p>
-                </div>
-              </div>
-              <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
-                <div className="leading-6 text-3xl font-bold">
-                  {minutes}
-                  <p className="text-xs">Minutes</p>
-                </div>
-              </div>
-              <div className=" rounded-full bg-yellow-600 border border-1 border-orange-800 bg-opacity-80 w-[4rem] h-[4rem]  flex justify-center items-center">
-                <div className="leading-6 text-3xl font-bold">
-                  {seconds}
-                  <p className="text-xs">Seconds</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full flex justify-center items-center">
-              <button
-                onClick={handleSaveDate}
-                className="py-2  px-4 text-3xl rounded-md bg-yellow-600 bg-opacity-80 text-orange-800 playfair">SAVE DATE</button>
-            </div>
-            </>
-          );
-        }
-      };
+            if (completed) {
+                // Render a completed state
+                return (
+                  <div style={{ fontSize: '2rem', textAlign: 'center' }} className=" GVibes  flex w-screen px-10 sm:w-full sm:px-10  m-auto font-serif text-orange-950 p-2 justify-between">
+                    <div className="rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl font-bold">
+                        <p>00</p>
+                        <p className="text-xs sm:text-sm  ">Days</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl font-bold">
+                        <p>00</p>
+                        <p className="text-xs sm:text-sm  ">Hours</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl font-bold">
+                        <p>00</p>
+                        <p className="text-xs sm:text-sm  ">Minutes</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl font-bold">
+                        <p>00</p>
+                        <p className="text-xs sm:text-sm  ">Seconds</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                // Render a countdown
+                return (
+                    <><div style={{ fontSize: '2rem', textAlign: 'center' }} className=" GVibes  flex w-screen px-10 sm:w-full sm:px-20 py-10 m-auto font-serif text-orange-950 p-2 justify-between">
+                    <div className="rounded-lg border  border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl sm:text-5xl  font-bold">
+                        {days}
+                        <p className="text-xs sm:text-sm  ">Days</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl sm:text-5xl  font-bold">
+                        {hours}
+                        <p className="text-xs sm:text-sm  ">Hours</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl sm:text-5xl  font-bold">
+                        {minutes}
+                        <p className="text-xs sm:text-sm  ">Minutes</p>
+                      </div>
+                    </div>
+                    <div className=" rounded-lg border border-orange-950 bg-yellow-600  bg-opacity-90 w-[4rem] h-[4rem]  flex justify-center items-center">
+                      <div className="leading-6 text-4xl sm:text-5xl  font-bold">
+                        {seconds}
+                        <p className="text-xs sm:text-sm  ">Seconds</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full flex justify-center  items-center">
+                      <button
+                        onClick={handleSaveDate}
+                        className="py-2  px-4 text-3xl rounded-md bg-yellow-600  text-orange-800 playfair">SAVE DATE</button>
+                    </div>
+                    </>
+                );
+              }
+            };
       const handleSaveDate = () => {
         const startDate = wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // format UTC
         const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
