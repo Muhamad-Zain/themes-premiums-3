@@ -30,7 +30,6 @@ export default function Page3({data, id}) {
             <div className='text-4xl sm:text-5xl text-center font-bold pb-10'>
                 <h3 className='Lora -mb-2 font-extrabold'>Bride</h3>
                 <h3 className='GVibes border-b-2 border-orange-800 w-72 m-auto '>& Groom</h3>
-                {/* <div className='border-b-2 border-orange-800 w-72  '/> */}
             </div>
             <div className='playfair text-md sm:text-lg opacity-80 italic text-center pb-10'>
                 <p className=' pb-5'>Assalamualaikum Wr. Wb</p>

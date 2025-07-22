@@ -63,8 +63,6 @@ export default function Page7({ id}) {
                     className='relative z-10 '>
                         <h3 className='playfair font-bold text-4xl -mb-3 text-center'>Wedding</h3>
                         <h3 className='GVibes text-4xl text-center border-b-2 border-orange-800 w-72 m-auto mb-5'>Expression</h3>
-                    {/* <h1 style={{textShadow: '2px 2px #065f46'}}  className=' playfair text-white text-3xl sm:text-5xl text-center'>WEDDING EXPRESSION</h1> */}
-                    {/* <div className='border-b-2 border- w-full mb-5' /> */}
                     <input 
                         type='text' 
                         placeholder='Masukkan Nama' 
@@ -80,7 +78,6 @@ export default function Page7({ id}) {
                         <p className=' text-center py-2'>{alert}</p>
                     <button 
                         type='submit' 
-                        // disabled={message ==='' || name === '' ? true : false}
                         className='bg-orange-800 bg-opacity-80 px-4 py-2  rounded-sm text-white'
                         >Kirim</button>
                     <div className='border-b-2 border-orange-800 w-full mt-2 ' />

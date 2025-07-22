@@ -1,6 +1,4 @@
 import style from './style.module.css'
-import { LuAlarmClock } from "react-icons/lu";
-import { IoLocationOutline } from "react-icons/io5";
 import { SiGooglemaps } from "react-icons/si";
 import PropTypes from 'prop-types';
 import Link from 'next/link';
@@ -9,16 +7,7 @@ import { fetchBg } from '../data/firebase';
 import { AnimatedSection, AnimateSee } from '../animation';
 
 export default function Page4({data, id}) {
-    const [image, setImage] = useState('')
-    useEffect(() => {
-        const getImage = async () => {
-            
-            const url = await fetchBg(`${id}/location`)
-            setImage(url)
-        }
-        getImage()
 
-    },[])
     return(
         <section>
             <div className='text-4xl sm:text-5xl text-center pt-20'>

@@ -4,18 +4,12 @@ import style from './style.module.css'
 import { useEffect, useState } from 'react'
 import { fetchBg } from '../data/firebase'
 import { LuPanelTopOpen } from "react-icons/lu";
-// import Bg from '../assets/bghome.jpeg'
 
 
 
 export default function Page1({btn, name, data, id}) {
     const [disable, setDisable] = useState(false)
     const [image, setImage] = useState('')
-    // const [data, setData] = useState([])
-    // console.log(data);
-
-    
-    
     
     const btnLocal = () => {
         setDisable(true)
@@ -35,11 +29,9 @@ export default function Page1({btn, name, data, id}) {
     return(
         <section style={{backgroundImage : `url('/assets/bghome.jpeg')`}} className= {style.bgHero}>
             <div className='relative z-20 w-full  text-center'>
-                {/* <h3 className='tracking-[0.1em] '>The Wedding Of</h3> */}
                 <div style={{textShadow: '2px 2px #fabe3c'}} className='text-6xl  font-bold py-1 GVibes italic sm:flex justify-center m-auto '>
                     <h1 className='mr-24 mb-2 sm:mb-0 sm:mr-0'>{data?.name?.mens} </h1> <p className='sm:mx-4'>&</p> <h1 className='ml-24 mt-2 sm:mt-0 sm:ml-0'> {data?.name?.grils}</h1>
                 </div> 
-                {/* <p className='text-sm'>{data?.date?.resepsi}</p> */}
                 <div className='mt-[40vh] text-orange-950'>
                     <p className='text-sm'>kpd Bpk/Ibu/Saudara/i</p>
                     <h3 className='font-bold py-3 sm:py-5 playfair'>{name ? name : 'Nama Tamu'}</h3>

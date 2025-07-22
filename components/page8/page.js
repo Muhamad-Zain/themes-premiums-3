@@ -10,8 +10,6 @@ import { AnimatedSection, AnimateSee } from '../animation'
 
 
 export default function Page8({id, data}) {
-    const [image, setImage] = useState('')
-
     const [gift, setGift] = useState(false)
     const [select, setSelect] = useState('')
     const [name, setName] = useState('')
@@ -89,17 +87,6 @@ export default function Page8({id, data}) {
             
         }
     }
-    useEffect(() => {
-        const getImage = async () => {
-            
-            const url = await fetchBg(`${id}/rsvp`)
-            setImage(url)
-        }
-
-        
-        getImage()
-
-    },[])
 
     return(
         <section className='my-10'>
@@ -209,7 +196,6 @@ export default function Page8({id, data}) {
                                 <p className='text-2xl text-slate-100 font-bold'>{data?.gift?.two?.rekening}</p>
                                 <p className='text-end pt-3 text-sm text-white'>a.n  {data?.gift?.two?.an}</p>
                             </div>
-                            {/* <div className='flex justify-center'> */}
                                 <button 
                                     onClick={() => buttonCopy(data?.gift?.two?.rekening)}
                                     disabled={load2? true : false}
@@ -217,25 +203,8 @@ export default function Page8({id, data}) {
                                     <MdFileCopy className='mr-2' />
                                     {load2 ? 'Succes' : 'Salin'}
                                 </button>
-                            {/* </div> */}
                             </div>
                         ): null}
-                        {/* {data?.gift?.home === data?.gift?.home ? (
-                            <div className='sm:w-[45%] w-[90%] my-2 bg-white border-4 border-double border-slate-600 bg-opacity-95 px-5 py-2 rounded-2xl'>
-                            <h1 className='text-black font-bold text-xl italic text-center'>Alamat kirim kado</h1>
-                            <div className='border-b-2 border-black' />
-                            <div className='flex justify-between py-5 text-sm text-slate-900 italic'>
-                                <p>{data?.gift?.home}</p>
-                            </div>
-                                <button
-                                    onClick={() => buttonCopy(data?.gift?.home)} 
-                                    disabled= {load3 ? true : false}
-                                    className='w-full py-1 bg-black bg-opacity-80 rounded-lg border flex justify-center items-center'>
-                                    <MdFileCopy className='mr-2' />
-                                    {load3 ? 'succes' : 'copy'}
-                                </button>
-                            </div>
-                        ): null} */}
                     </div>
                 </div>
             </AnimateSee>

@@ -1,17 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 import { getDownloadURL, getStorage, listAll, ref as storageRef, uploadBytes  } from 'firebase/storage'
 import { getDatabase, child, get, ref, set, push } from 'firebase/database'
-// import { collection, doc, getDocs, getFirestore } from 'firebase/firestore'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -67,13 +60,6 @@ const fetchBg = async (id) => {
         console.log("Gagal mendapatkan gambar:", error);
         return [];
     }
-    // const imqColect =  collection(db, `${id}`)
-
-    // try {
-    //     const snapshot  = await getDocs
-    // } catch (error) {
-        
-    // }
 }
 
 // Fetch Image Galery from Firebase
@@ -99,8 +85,6 @@ const fetchGalery = async (id) => {
 
 // Send Data String to Firebase
 const addDataToFirebase = async (id, formData) => {
-    // const id = formData.id || Date.now().toString();
-    // const id =  Date.now().toString();
 
     try {
       await set(ref(database, `/weddings-tree/${id}`), formData);
@@ -135,7 +119,6 @@ const addDataToFirebase = async (id, formData) => {
   // Fungsi untuk meng-upload beberapa file sekaligus
   export const uploadFiles = async (id, files, categories) => {
     try {
-    //   const newId = uuidv4();  // Membuat ID unik untuk setiap upload
   
       const uploadedFiles = [];
       for (const category of categories) {
@@ -168,7 +151,6 @@ const addDataToFirebase = async (id, formData) => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log("User logged in:", user);
-      // setVerify(true)
       return true
   
     } catch (error) {
