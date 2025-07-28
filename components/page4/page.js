@@ -81,7 +81,7 @@ export default function Page5({data}) {
                   <div className="w-full flex justify-center  items-center">
                       <button
                         onClick={handleSaveDate}
-                        className="py-2  px-4 text-3xl rounded-md bg-yellow-600  text-orange-800 playfair">SAVE DATE</button>
+                        className="py-2  px-4 text-3xl rounded-md bg-yellow-600  text-orange-950 border-orange-950 border playfair">SAVE DATE</button>
                     </div>
                     </>
                 );
@@ -92,7 +92,7 @@ export default function Page5({data}) {
         const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
         const eventTitle = `Wedding of ${data?.name?.mens} & ${data?.name?.grils}`;
         const eventDetails = `Join us in celebrating the wedding of ${data?.name?.mens} & ${data?.name?.grils}.`;
-        const eventLocation = "Bojonegoro, Indonesia";
+        const eventLocation = `${data?.location?.resepsi}`;
       
         const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
         
