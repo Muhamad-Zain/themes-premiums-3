@@ -23,9 +23,9 @@ export default function Page4({data, id}) {
                         <p>{data?.date?.time?.akad} - Selesai</p>
                         <div  className='py-5'>
                             <p>Bertempat di:</p>
-                            <p>{data?.gift?.home}</p>
+                            <p>{data?.location?.akad}</p>
                         </div>
-                        <Link href={`${data?.location?.akad}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-orange-800 text-white bg-opacity-80 '>
+                        <Link href={`${data?.location?.linkAkad}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-orange-800 text-white bg-opacity-80 '>
                             <SiGooglemaps className='mr-2' />
                             Google Maps
                         </Link>
@@ -40,9 +40,9 @@ export default function Page4({data, id}) {
                         <p>{data?.date?.time?.resepsi} - Selesai</p>
                         <div  className='py-5'>
                             <p>Bertempat di:</p>
-                            <p>{data?.gift?.home}</p>
+                            <p>{data?.location?.resepsi}</p>
                         </div>
-                        <Link href={`${data?.location?.resepsi}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-orange-800 text-white bg-opacity-80 '>
+                        <Link href={`${data?.location?.linkResepsi}`} className='py-2 w-48 m-auto flex justify-center items-center rounded-md bg-orange-800 text-white bg-opacity-80 '>
                             <SiGooglemaps className='mr-2' />
                             Google Maps
                         </Link>

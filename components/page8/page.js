@@ -189,7 +189,7 @@ export default function Page8({id, data}) {
                             </button>
                             </div>
                         ): null}
-                        {data?.gift?.two?.nameBank === data?.gift?.two?.nameBank ? (
+                        {data?.gift?.two?.nameBank ? (
                             <div className={style.cardBank}>
                             <h1 style={{textShadow:'2px 2px white'}} className='text-blue-800 font-bold text-3xl italic'>{data?.gift?.two?.nameBank}</h1>
                             <div className='py-5 italic'>

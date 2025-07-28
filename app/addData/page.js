@@ -22,7 +22,7 @@ export default function AddData() {
         name:{mens:'',grils:'', namaLengkap:{mens:'',grils:''}},
         date: {akad:'',resepsi:'', all:'',time:{akad:'',resepsi:''}},
         parent:{mens:'',grils:''},
-        location: {akad:'',resepsi:''},
+        location: {akad:'',resepsi:'',linkAkad:'', linkResepsi:''},
         gift: {one:{nameBank:'',rekening:'',an:''},two:{nameBank:'',rekening:'',an:''},home:''},
         // story: {one:'',two:'',tree:''},
         sosmed: {mens:{facebook:'',instagram:'', twitter:'', tiktok:''},grils:{facebook:'',instagram:'', twitter:'', tiktok:''}},
@@ -163,8 +163,12 @@ const login = async (email, password) => {
                   
                   <label className="text-white text-lg italic">Location</label>
                   <p className="text-white">Akad</p>
+                  <input type="text" name="location.linkAkad" className="w-full outline-none my-1 rounded-md px-2 py-2" required placeholder="ex. https://link.com" onChange={handleChange} />
+                  <p>Alamat :</p>
                   <input type="text" name="location.akad" className="w-full outline-none my-1 rounded-md px-2 py-2" required placeholder="ex. https://link.com" onChange={handleChange} />
                   <p className="text-white">Resepsi</p>
+                  <input type="text" name="location.linkResepsi" className="w-full outline-none my-1 rounded-md px-2 py-2" required placeholder="ex. https://link.com" onChange={handleChange} />
+                  <p>Alamat :</p>
                   <input type="text" name="location.resepsi" className="w-full outline-none my-1 rounded-md px-2 py-2" required placeholder="ex. https://link.com" onChange={handleChange} />
 
                   <label className="text-white text-lg italic">Name Parent</label>
@@ -227,21 +231,21 @@ const login = async (email, password) => {
 
                   <label className="text-white text-xl italic grid">Galery</label>
                   <p className="text-white py-2">foto 1</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple />
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple />
                   <p className="text-white py-2">foto 2</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 3</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 4</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 5</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 6</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 7</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
                   <p className="text-white py-2">foto 8</p>
-                  <input type="file" className="text-white grid" onChange={handleFileChange} required name="galery" multiple/>
+                  <input type="file" className="text-white grid" onChange={handleFileChange}  name="galery" multiple/>
 
                   <button disabled={message ? true : false} type="submit" className={`${message ? 'bg-white w-full h-8 items-center ' : 'bg-slate-300 '}p-2 my-10 w-full flex justify-center  rounded-md`}>
                     {message ? (
